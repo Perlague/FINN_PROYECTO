@@ -57,7 +57,7 @@ public class Main {
         ventana.setResizable(false);
         
         // Creación del panel de fondo:
-        JPanel panelFondo = new PanelConImagen("src/imagenes/fondo.jpg");
+        JPanel panelFondo = new PanelConImagen("/imagenes/fondo.jpg");
         panelFondo.setLayout(null);
         ventana.setContentPane(panelFondo);
         
@@ -191,7 +191,7 @@ class PanelConImagen extends JPanel {
     private Image imagen;
 
     public PanelConImagen(String rutaImagen) {
-        this.imagen = new ImageIcon(rutaImagen).getImage();
+        this.imagen = new ImageIcon(getClass().getResource(rutaImagen)).getImage();
     }
 
     @Override
